@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react' ;
 import AuthContext from '../../context/AuthProvider' 
-
+import './style.css'
+import React from 'react';
 
 
 import axios from '../../api/axios';
@@ -94,42 +95,52 @@ export const Login = () => {
             ) : (
 
         <section>
-            
+            <div class="bg-img">
+
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+            
+            <form className = "form" onSubmit ={handleSubmit}>
             <h1>Log In</h1>
-            <form onSubmit ={handleSubmit}>
-                <label htmlFor="username" >Username:</label>
-                <input
-                            type="text"
-                            id="username"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
-                            required
-                        />
+                    <div className="form-inputs">
+                         <label htmlFor="username" className="form-label" >Username:</label>
+                             <input 
+                                className="form-input"
+                                type="text"
+                                id="username"
+                                ref={userRef}
+                                autoComplete="off"
+                                onChange={(e) => setUser(e.target.value)}
+                                value={user}
+                                required
+                                placeholder="Enter Username"
+                             />
+                    </div>
+                       <div className="form-inputs">     
+                            <label htmlFor="password" className="form-label" >Password:</label>
+                                <input
+                                    className="form-input"
+                                    type="password"
+                                    id="password"
+                                    onChange={(e) => setPwd(e.target.value)}
+                                    value={pwd}
+                                    required
+                                    placeholder="Enter Password"
+                                />
                         
-                <label htmlFor="password" >Password:</label>
-                <input
-                            type="password"
-                            id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
-                            required
-                        />
-                        <button>Login In</button>
-            </form>
-            <div/>
-            <p>
+                    <div/>
+            </div>
+            <button className="form-input-btn">Login</button>
+            
             Don't have an Account?<br />
-             
-                        <span className="line">
-                            <Button path="/signup" value= "Sign up" className="btnSignup"/>
-                        </span>
-             
-        
-            </p>
+            
+            <span className="form-input-login"> Sign up  <a href="/">here!</a></span>
+
             <div/>
+            </form>
+
+            </div>
+            
+            
 
         </section>
             )}
