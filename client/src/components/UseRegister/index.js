@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react'
 
+//we import validatingErrors from Register and pass it as a parameter to UseRegister 
 
- export  const UseRegister = ValidateRegister => {
+ export  const UseRegister = validatingErrors  => {
   const [values, setValues] = useState({
     username: '',
     email: '',
@@ -13,7 +14,7 @@ import {useState, useEffect} from 'react'
 
   const handleSubmit = e => {
     e.preventDefault();
-    setErrors(ValidateRegister(values))
+    setErrors(validatingErrors(values))
   }
 
 
