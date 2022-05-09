@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react'
 
+//we import validatingErrors from Register and pass it as a parameter to UseRegister
 
- export const UseRegister = ValidateRegister => {
+ export  const UseRegister = (callback, validatingErrors)  => {
   const [values, setValues] = useState({
     username: '',
     email: '',
@@ -10,11 +11,21 @@ import {useState, useEffect} from 'react'
   })
 
   const [errors, setErrors] = useState({})
+  const [formSubmitting, setFormSubmitting] = useState (false)
 
   const handleSubmit = e => {
     e.preventDefault();
-    setErrors(ValidateRegister(values))
+    setErrors(validatingErrors(values))
+    setFormSubmitting(true);
+
   }
+
+//  allows us to submit Register form if there are no errors 
+useEffect(() => {
+  if(Object.keys(errors).length === 0 && formSubmitting ){
+    callback()
+  }
+}, [errors])
 
 
   const handleChange = e => {
