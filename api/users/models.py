@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField("Name", max_length=200)
     username = models.CharField("Username", max_length=100, unique=True)
     email = models.EmailField(unique=True)
     is_verified = models.BooleanField(default=True)
