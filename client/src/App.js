@@ -10,7 +10,8 @@ function App() {
        <Route path='/' element={<Pages.Home />} />
        <Route path='/signup' element={<Pages.Signup />} />
        <Route path='/login' element={<Pages.LoginForm />} />
-       
+       <Route path='/general-advice' element={<Pages.GeneralAdvice />} />
+
 
     </Routes>
 
