@@ -6,7 +6,7 @@ class User(models.Model):
     username = models.CharField("Username", max_length=100, unique=True)
     email = models.EmailField(unique=True)
     is_verified = models.BooleanField(default=True)
-    mind_state = models.CharField("Status", max_length=50)
+    mind_state = models.CharField("Status", max_length=50, blank=True)
     password = models.CharField("Password", max_length=255)
     banned = models.BooleanField(default=False)
 
