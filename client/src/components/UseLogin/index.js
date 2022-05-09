@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useContext } from 'react' ;
 import AuthContext from '../../context/AuthProvider' 
 import './style.css'
 import React from 'react';
+import { Register } from '../Register';
 
 
 import axios from '../../api/axios';
@@ -133,7 +134,7 @@ export const Login = () => {
             
             Don't have an Account?<br />
             
-            <span className="form-input-login"> Sign up  <a href="/">here!</a></span>
+            <span className="form-input-login"> Sign up  <a href="/signup">here!</a></span>
 
             <div/>
             </form>

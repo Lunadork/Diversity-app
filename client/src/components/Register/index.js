@@ -2,6 +2,7 @@ import React from 'react'
 import  { UseRegister } from '../UseRegister'
 import validatingErrors from '../ValidateRegisterForm'
 import './style.css'
+import { Login } from '../UseLogin'
 
 
 
@@ -46,7 +47,7 @@ import './style.css'
           </div>
 
           <button className="form-input-btn " type='submit'>Register</button>
-          <span className="form-input-login">Already have an account? Login <a href="/">here</a></span>
+          <span className="form-input-login">Already have an account? Login <a href="/login">here</a></span>
         </form>
       </div>
     </div>
