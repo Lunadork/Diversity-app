@@ -1,5 +1,6 @@
 import React from 'react'
-import { GetStarted } from '../../components';
+import { GetStarted} from '../../components';
+
 
 
 

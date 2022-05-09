@@ -7,8 +7,8 @@ function App() {
   return (
 
     <Routes>
-       <Route index element={<Pages.Home />} />
-
+       <Route path='/' element={<Pages.Home />} />
+       <Route path='/signup' element={<Pages.Signup />} />
     </Routes>
 
 
