@@ -6,10 +6,13 @@ import './style.css'
 
 
 // all error messages for validations are triggered from ValidateRegisterForm
+//UseRegister coming from use UseRegister component
+// submitForm is coming from sigup folder in pages folder
 
- export const Register= () => {
+ export const Register= ({submitForm}) => {
 
-  const {handleChange, values, handleSubmit, errors} = UseRegister(validatingErrors )
+  const {handleChange, values, handleSubmit, errors} = UseRegister(submitForm, validatingErrors )
+
   return (
     <div className="form-content">
       <form  className="form" onSubmit={handleSubmit}>

@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-//we import validatingErrors from Register and pass it as a parameter to UseRegister 
+//we import validatingErrors from Register and pass it as a parameter to UseRegister
 
  export  const UseRegister = validatingErrors  => {
   const [values, setValues] = useState({
@@ -11,11 +11,16 @@ import {useState, useEffect} from 'react'
   })
 
   const [errors, setErrors] = useState({})
+  const [formSubmitting, setFormSubmitting] = useState (false)
 
   const handleSubmit = e => {
     e.preventDefault();
     setErrors(validatingErrors(values))
+    setFormSubmitting(true);
+
   }
+
+
 
 
   const handleChange = e => {
