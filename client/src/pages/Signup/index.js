@@ -1,5 +1,6 @@
 import React, { useState }from 'react'
 import { Register } from '../../components';
+import { RegisterSuccess } from '../../components';
 
 
 
@@ -13,8 +14,7 @@ export const Signup = () => {
 
   return (
     <>
-    <Register />
-
+    {/* if the register form is submitted, render success page else render Register form */}
     {!formSubmitted ? < Register submitForm={submitForm} /> : <RegisterSuccess />}
     </>
 
