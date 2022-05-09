@@ -15,5 +15,5 @@ class User(models.Model):
     class Meta:
         db_table = 'User'
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.username
