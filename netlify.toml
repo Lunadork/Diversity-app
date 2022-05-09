@@ -1,5 +1,5 @@
 [build]
-    command = "npm run build" # how to trigger a build
+    command = "npm run build" # how to trigger a buil
     publish = "/build"
 
 

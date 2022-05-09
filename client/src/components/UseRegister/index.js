@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 
 
- export  const UseRegister = ValidateRegister => {
+ export const UseRegister = ValidateRegister => {
   const [values, setValues] = useState({
     username: '',
     email: '',

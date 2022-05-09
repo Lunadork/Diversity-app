@@ -7,18 +7,18 @@ import './style.css'
   return (
     <>
      <section id="banner" >
-       <img src={logo} alt="" class="logo" />
+       <img src={logo} alt="" className="logo" />
 
-        <div class="banner-text ">
+        <div className="banner-text ">
 
             <h1>Mental health solutions</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             </p>
 
       </div>
-            <div class="banner-btn">
-              <Button path="/signup" value= "Get started" class="btnSignup"/>
-              <Button path="/signup" value= "Login" class="btnSignup"/>
+            <div className="banner-btn">
+              <Button path="/signup" value= "Get started" className="btnSignup"/>
+              <Button path="/login" value= "Login" className="btnLogin"/>
             </div>
     </section>
 
