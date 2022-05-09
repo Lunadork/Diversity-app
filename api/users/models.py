@@ -7,9 +7,8 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     is_verified = models.BooleanField(default=True)
     mind_state = models.CharField("Status", max_length=50)
-    password = models.CharField("Password", max_length=50)
+    password = models.CharField("Password", max_length=255)
     banned = models.BooleanField(default=False)
-
 
     class Meta:
         db_table = 'User'
