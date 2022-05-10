@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../../components'
+import {Button} from '..'
 import logo from '../../logo1.png'
 import './style.css'
 

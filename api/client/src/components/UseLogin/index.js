@@ -80,7 +80,7 @@ export const Login = () => {
         setErrMsg('');
     }, [email, pwd])
 
-   
+
 
     const handleSubmit = async (e) => {
             e.preventDefault();
@@ -124,8 +124,8 @@ export const Login = () => {
         
     
 
-        
-    
+
+
 
     // Semantic element used for clarity
     // aria-live used to announce message when focus is set immediately
@@ -233,8 +233,8 @@ export const Login = () => {
             
 
             </div>
-            
-            
+
+
 
         </section>
         
@@ -242,5 +242,3 @@ export const Login = () => {
          </>  
     )
 }
-
-
