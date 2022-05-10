@@ -18,8 +18,9 @@ export default function ValidateRegister (values) {
 
   if(!values.password){
     errors.password = "Password is required "
-  }else if (values.password.length < 6){
-    errors.password = 'Password needs to be  6 characters or more'
+  }else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/i.test(values.password)){
+    errors.password = 'Must be 8 to 24 characters and include uppercase and lowercase letters, a number and a special character(e.g.!,@,#,$,%)'
+    
   }
 
   if(!values.password2){

@@ -15,7 +15,7 @@ import { Login } from '../UseLogin'
   const {handleChange, values, handleSubmit, errors} = UseRegister(submitForm, validatingErrors )
 
   return (
-  <div class="bg-img">
+  <div className="bg-img">
 
     <div className="form-container">
       <div className="form-content ">

@@ -71,6 +71,8 @@ position: absolute;
     border: none;
     color: #fff;
     font-size: 1rem;
+    text-align: center;
+    margin:auto;
   }
   
 .form-input-btn:hover {
