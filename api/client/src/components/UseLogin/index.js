@@ -2,7 +2,9 @@ import { useRef, useState, useEffect, useContext } from 'react' ;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-import AuthContext from '../../context/AuthProvider' 
+import AuthContext from '../../context/AuthProvider'
+import axios from '../../api/axios';
+import { Button } from '../Button/index'; 
 // import './style.css'/
 // import React from 'react';
 // import { Register } from '../Register';
@@ -10,8 +12,7 @@ import AuthContext from '../../context/AuthProvider'
 // import { ValidateLogin } from '../ValidateLogin'
 
 
-import axios from '../../api/axios';
-import Button from '../Button';
+
 
 
 
