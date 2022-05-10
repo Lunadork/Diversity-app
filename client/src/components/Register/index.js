@@ -2,7 +2,7 @@ import React from 'react'
 import  { UseRegister } from '../UseRegister'
 import validatingErrors from '../ValidateRegisterForm'
 import './style.css'
-import { Login } from '../UseLogin'
+
 
 
 

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useContext } from 'react' ;
-import AuthContext from '../../context/AuthProvider' 
+import AuthContext from '../../context/AuthProvider'
 import './style.css'
 import React from 'react';
 import { Register } from '../Register';
@@ -31,7 +31,7 @@ export const Login = () => {
         setErrMsg('');
     }, [user, pwd])
 
-   
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,7 +39,7 @@ export const Login = () => {
         setUser('');
         setPwd('');
         setSuccess(true);
-        
+
         // try {
         //     const response = await axios.post(LOGIN_URL,
         //         JSON.stringify({ user, pwd }),
@@ -73,11 +73,11 @@ export const Login = () => {
         // }
 
 
-        
+
     }
 
-        
-    
+
+
 
     // Semantic element used for clarity
     // aria-live used to announce message when focus is set immediately
@@ -99,12 +99,12 @@ export const Login = () => {
             <div class="bg-img">
 
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            
+
             <form className = "form" onSubmit ={handleSubmit}>
             <h1>Log In</h1>
                     <div className="form-inputs">
                          <label htmlFor="username" className="form-label" >Username:</label>
-                             <input 
+                             <input
                                 className="form-input"
                                 type="text"
                                 id="username"
@@ -116,7 +116,7 @@ export const Login = () => {
                                 placeholder="Enter Username"
                              />
                     </div>
-                       <div className="form-inputs">     
+                       <div className="form-inputs">
                             <label htmlFor="password" className="form-label" >Password:</label>
                                 <input
                                     className="form-input"
@@ -127,28 +127,26 @@ export const Login = () => {
                                     required
                                     placeholder="Enter Password"
                                 />
-                        
+
                     <div/>
             </div>
             <button className="form-input-btn">Login</button>
-            
+
             Don't have an Account?<br />
-            
+
             <span className="form-input-login"> Sign up  <a href="/signup">here!</a></span>
 
             <div/>
             </form>
 
             </div>
-            
-            
+
+
 
         </section>
             )}
             </>
-           
-           
+
+
     )
 }
-
-

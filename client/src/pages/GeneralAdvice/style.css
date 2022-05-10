@@ -5,7 +5,7 @@
 
 .category-btn {
   width: 20%;
-  height: 50px;
+  height: 30px;
   margin-top: 10px;
   border-radius: 50px;
   background: linear-gradient(90deg,
@@ -15,6 +15,7 @@
   border: none;
   color: #fff;
   font-size: 1rem;
+  margin: 15px;
 }
 
 .category-btn:hover {
