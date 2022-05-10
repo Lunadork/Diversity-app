@@ -1,26 +1,34 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '400px',
+  width: '600px',
   height: '400px'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
+const defaultcenter = {
+  lat: 51.5072,
+  lng: 0.1276
 };
+
+
+
+let testmarkers = [{ "id" : 1, "position" : { lat: 51.4, lng: 0.13}, "name":"marker1" },
+                   { "id" : 2, "position" : { lat: 51.5072, lng: 0.1276}, "name":"marker2"},
+                   { "id" : 3, "position" : { lat: 51.51, lng: 0.128}, "name":"marker3"}]
+
+
 
 export const GoogMap = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyBWPkR4aIMZdKmONSJJjmpH771pIwoZXv4"
+    googleMapsApiKey: ""
   })
 
   const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
+    const bounds = new window.google.maps.LatLngBounds(defaultcenter);
     map.fitBounds(bounds);
     setMap(map)
   }, [])
@@ -29,9 +37,24 @@ export const GoogMap = () => {
     setMap(null)
   }, [])
 
+
+  function markerClick(e)
+  {
+    //do things when marker clicked
+    console.log("Clicked!")
+
+    let markerName = e
+
+    console.log(markerName)
+    
+  }
+
+
   return isLoaded ? (
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
-        { /* Child component go here */ }
+      <GoogleMap mapContainerStyle={containerStyle} center={defaultcenter} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+        
+        {testmarkers.map((marker) => (<Marker key = {marker.id} position = {marker.position} onClick = {markerClick} name={marker.name} /> ) )}
+
       </GoogleMap>
 
 
