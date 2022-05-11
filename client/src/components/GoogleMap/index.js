@@ -37,7 +37,7 @@ export const GoogMap = (data) => {
 
 
   return isLoaded ? (
-      <GoogleMap mapContainerStyle={containerStyle} center={data.position} defaultZoom={10} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+      <GoogleMap mapContainerStyle={containerStyle} center={data.position} defaultZoom={11} zoom={11} onLoad={onLoad} onUnmount={onUnmount}>
         
         <Marker key = {data.id} position = {data.position} onClick = {markerClick}  /> 
 
