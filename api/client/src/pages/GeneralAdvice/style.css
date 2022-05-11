@@ -1,6 +1,10 @@
 .container-general-advice{
   width: 800px;
-  margin: 0 auto;
+  margin: 100px auto;
+  border: 1px solid grey;
+  /* height: 100vh; */
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .category-btn {

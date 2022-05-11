@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect, useContext } from 'react' ;
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 import AuthContext from '../../context/AuthProvider'
 import axios from '../../api/axios';
-import { Button } from '../Button/index'; 
+import { Button } from '../Button/index';
 // import './style.css'/
 // import React from 'react';
 // import { Register } from '../Register';
@@ -27,10 +27,10 @@ export const Login = () => {
     const {setAuth} = useContext(AuthContext);
     const emailRef = useRef();
     const errRef = useRef();
-    
 
 
-    
+
+
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
@@ -96,11 +96,11 @@ export const Login = () => {
                 );
                 console.log(JSON.stringify(response?.data));
                 //console.log(JSON.stringify(response));
-    
+
                 //CHECKWITH BACKEND
                 const accessToken = response?.data?.accessToken;
                 const roles = response?.data?.roles;
-    
+
                 setAuth({ email, pwd, roles, accessToken });
                 setEmail('');
                 setPwd('');
@@ -119,11 +119,11 @@ export const Login = () => {
             }
         }
 
-        
 
 
-        
-    
+
+
+
 
 
 
@@ -148,9 +148,9 @@ export const Login = () => {
             <div className="bg-img">
 
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            
-            <form className = "form" onSubmit ={handleSubmit}> 
-            
+
+            <form className = "form" onSubmit ={handleSubmit}>
+
                 <h1>Log In</h1>
                 <div className="form-inputs">
                         <label htmlFor="email" className="form-label" >
@@ -164,7 +164,7 @@ export const Login = () => {
                                  {/* <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
                                  <FontAwesomeIcon icon={faTimes} className={validEmail|| !email ? "hide" : "invalid"} /> */}
                         </label>
-                                <input 
+                                <input
                                     className="form-input"
                                     type="text"
                                     id="email"
@@ -183,12 +183,12 @@ export const Login = () => {
                                     <FontAwesomeIcon icon={faInfoCircle} />
                                     Must be valid email<br />
                                 </p> : null}
-                                
+
                 </div>
 
-                <div className="form-inputs">     
+                <div className="form-inputs">
                     <label htmlFor="password" className="form-label" >
-                         Password: 
+                         Password:
                          {/* <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                          <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} /> */}
                          {/* <span className= {validPwd ? "valid" : "hide"}>
@@ -218,28 +218,28 @@ export const Login = () => {
                             Must include uppercase and lowercase letters, a number and a special character.<br />
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p> : null } */}
-                         
-                
+
+
                     <div/>
 
-            
-                    
-                
+
+
+
 
                 </div>
                 <button className="form-input-btn " type='submit'>Login</button>
                     <span className="form-input-login">Need an account? Signup <a href="/signup">here</a></span>
-                
+
             </form>
-            
+
 
             </div>
 
 
 
         </section>
-        
+
             )}
-         </>  
+         </>
     )
 }

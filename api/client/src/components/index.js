@@ -8,4 +8,6 @@ export {  UseRegister } from './UseRegister';
 export { default as ValidateRegister } from './ValidateRegisterForm';
 export { Login } from './UseLogin';
 export {ChatRoom} from './ChatRoom'
+export {Text} from './Text'
+export { default as AdviceData} from './AdviceData'
 // export { default as ValidateLogin } from './ValidateLogin';
