@@ -6,6 +6,10 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         # Grabbing the name of the chat room from the url (with room_name).
         self.room_name = self.scope['url_route']['kwargs']['room_name']
+
+        #get username
+        scope_username = self.scope["user"].username
+
         # Defining the room group name for users to join (by the room name)
         self.room_group_name = 'chat_%s' % self.room_name
        
@@ -19,12 +23,33 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
         # accepts or reject the connection
         await self.accept()
 
+        
+        # await self.channel_layer.group_send(
+        #     self.room_group_name,
+        #     {
+        #         'type': 'chatroom_message',
+        #         'message': scope_username + " has entered the chat."  
+        #     }
+        # )
+
     # Removing the group and channel name   
     async def disconnect(self, close_code):
-            await self.channel_layer.group_discard(
-                self.room_group_name,
-                self.channel_name
-            )
+        #get username from scope
+        # scope_username = self.scope["user"].username
+
+        # await self.channel_layer.group_send(
+        # self.room_group_name,
+        # {
+        #     'type': 'chatroom_message',
+        #     'message': scope_username + " has left the chat." 
+        # }
+        # )
+
+
+        await self.channel_layer.group_discard(
+            self.room_group_name,
+            self.channel_name
+        )
 
     # Sending the message to a specific group name
     # Getting the received message data from the User
