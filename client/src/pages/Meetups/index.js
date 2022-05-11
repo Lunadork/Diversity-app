@@ -13,13 +13,14 @@ export const Meetups = () =>
   ])
 
 
-  const addGroup = (name,description,address,latitude,longitude,when) => 
+  const addGroup = (name,description,address,position,when) => 
   {
-
-    console.log( "lat: " +latitude, "long: "+longitude)
+ 
+    // console.log(latitude + " " + longitude)
 
     const newid = groups.length +1
-    const newgroup = { "id" : newid, "name": name, "description" : description, "address" : address, "position" : {lat: parseFloat(latitude), lng: parseFloat(longitude)}, "when" : when }
+    const newgroup = { "id" : newid, "name": name, "description" : description, "address" : address, "position" : position, "when" : when }
+
     console.log(newgroup)
 
     let newarr=[]
@@ -31,7 +32,6 @@ export const Meetups = () =>
 
     newarr.push(newgroup)
 
-    console.log(newarr)
 
     setGroups(newarr)
   

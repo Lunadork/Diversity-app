@@ -8,8 +8,6 @@ export const AddGroupForm = ( {onAdd} ) =>
     const [description,setDescription] = useState('')
     const [streetAddress,setStreetAddress] = useState('')
     const [postcode,setPostcode] = useState('')
-    const [lat,setLat] = useState('')
-    const [lng,setLng] = useState('')
     const [when,setWhen] = useState('')
 
 
@@ -34,13 +32,21 @@ export const AddGroupForm = ( {onAdd} ) =>
         try
         {
             const resp = await getPosition(postcode)
-            console.log("postc ret")
-            console.log(resp.result.latitude + "," + resp.result.longitude)
 
-            const lat = resp.result.latitude
-            const lng = resp.result.longitude
-            setLat(lat)
-            setLng(lng)
+            console.log(resp)
+
+            const lati = resp.result.latitude
+            const lngi = resp.result.longitude
+
+            console.log(parseFloat(lati))
+            console.log(parseFloat(lngi))
+
+            const position = {lat: lati, lng: lngi}
+
+            const address = streetAddress+" - "+postcode
+        
+            onAdd(name,description,address,position,when)
+            
         }
         catch(err)
         {
@@ -48,10 +54,7 @@ export const AddGroupForm = ( {onAdd} ) =>
             console.warn("Failed to get lat/long from response " +err)
         }
 
-        const address = streetAddress+" - "+postcode
         
-        //submit form back to page
-        onAdd(name,description,address,lat,lng,when)
     }
 
         //regex postcode checking

@@ -12,6 +12,7 @@ export const Group = (data) =>
         <p className='groupdescription'>{data.description}</p>
         <p className='groupaddress'>{data.address}</p>
         <p className='grouplocation'>{data.location}</p>
+
         
 
         <p className='toggleMap' onClick = { () => setMapVisible(!mapVisible) }>click to toggle map</p>
