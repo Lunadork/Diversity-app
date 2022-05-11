@@ -1,0 +1,15 @@
+.textAdvice{
+  border: 1px solid grey;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.textAdvice h3{
+  color: rgb(33, 22, 243);
+}
+
+.textAdvice p{
+  color: rgb(28, 23, 23);
+  line-height: 30px;
+}
