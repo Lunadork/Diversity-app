@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 
 //we import validatingErrors from Register and pass it as a parameter to UseRegister
 
- export  const UseRegister = (callback, validatingErrors)  => {
+ export const UseRegister = (callback, validatingErrors)  => {
   const [values, setValues] = useState({
     username: '',
     email: '',

@@ -15,19 +15,31 @@ import { Button } from '../Button/index';
 
 
 
+// const emailState =  () => {
+// const [email, setEmail] = useState('');
+// const [validEmail, setValidEmail] = useState(false);
+// const [userFocus, setUserFocus] = useState(false);
+// }
 
 
 
-const LOGIN_URL = '/auth'
+const LOGIN_URL = 'https://fpmhapp.herokuapp.com/users/'
 
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/i;
+
+export const validateLoginEmail = (str = " ") => str.includes(EMAIL_REGEX);
+
+
 
 export const Login = () => {
     const {setAuth} = useContext(AuthContext);
     const emailRef = useRef();
     const errRef = useRef();
-    
+
+    // const validateLoginEmail = () => !(!email || EMAIL_REGEX.test(email) === false)
+
+    // EMAIL_REGEX.test(email) = true ? console.log("email is valid") || console.log("email is invalid")
 
 
     
@@ -155,7 +167,7 @@ export const Login = () => {
                 <div className="form-inputs">
                         <label htmlFor="email" className="form-label" >
                                  Email:
-                                 <span className= {validEmail ? "valid" : "hide"}>
+                                 <span className= {validEmail ? "valid" : "error" } >
                                       { validEmail ? <FontAwesomeIcon icon={faCheck} style = {validEmail ? {color:'green'} :{color:'transparent'} } /> : null}
                                 </span>
                                 <span className={validEmail || !email ? "hide" : "invalid"}>
@@ -166,8 +178,10 @@ export const Login = () => {
                         </label>
                                 <input 
                                     className="form-input"
-                                    type="text"
+                                    name="email"
+                                    type="email"
                                     id="email"
+                                    data-testid="email-input"
                                     ref={emailRef}
                                     autoComplete="off"
                                     onChange={(e) => setEmail(e.target.value)}
@@ -181,8 +195,10 @@ export const Login = () => {
                                 />
                                 {userFocus && email && !validEmail ? <p id="uidnote" className = {userFocus && email && !validEmail ? "instructions" : "offscreen"}>
                                     <FontAwesomeIcon icon={faInfoCircle} />
-                                    Must be valid email<br />
-                                </p> : null}
+                                    Please enter a valid email.<br />
+                                </p> : null }
+                                
+                                
                                 
                 </div>
 
@@ -227,7 +243,7 @@ export const Login = () => {
                 
 
                 </div>
-                <button className="form-input-btn " type='submit'>Login</button>
+                <button className="form-input-btn " data-testid="btn-to-login" type='submit'>Login</button>
                     <span className="form-input-login">Need an account? Signup <a href="/signup">here</a></span>
                 
             </form>
