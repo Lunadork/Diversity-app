@@ -43,7 +43,8 @@ export const AddGroupForm = ( {onAdd} ) =>
 
             const position = {lat: lati, lng: lngi}
 
-            const address = streetAddress+" - "+postcode
+            
+            const address = streetAddress+" - "+postcode.toUpperCase()
         
             onAdd(name,description,address,position,when)
             
