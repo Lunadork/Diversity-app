@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react'
+import axios from 'axios';
+
+const baseUrl="https://fpmhapp.herokuapp.com/users/"
 
 //we import validatingErrors from Register and pass it as a parameter to UseRegister
 
@@ -13,29 +16,36 @@ import {useState, useEffect} from 'react'
   const [errors, setErrors] = useState({})
   const [formSubmitting, setFormSubmitting] = useState (false)
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors(validatingErrors(values))
+    setErrors(validatingErrors(userInfo))
     setFormSubmitting(true);
-
   }
 
-//  allows us to submit Register form if there are no errors 
+//  allows us to submit Register form if there are no errors
 useEffect(() => {
   if(Object.keys(errors).length === 0 && formSubmitting ){
-    callback()
+     callback()
   }
-}, [errors])
+}, [errors, formSubmitting, callback ])
 
 
   const handleChange = e => {
-    setValues({
-      ...values,
+    setUserInfo({
+      ...userInfo,
       //targeting all name in the form in Register
       [e.target.name]: e.target.value
     })
-
+    console.log(userInfo)
   }
-  return {handleChange, values, handleSubmit, errors}
+
+
+
+  // we pass this function to the register folder in components
+
+
+
+
+  return {handleChange, userInfo, handleSubmit, errors}
 
 }
