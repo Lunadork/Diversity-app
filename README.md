@@ -55,7 +55,7 @@ The server API is currently hosted at https://fpmhapp.herokuapp.com/users/
 
 ### Socket.IO
 
-The command executed in the API subsection above will also activate the Socket.IO on *localhost:5000*
+Run this command `...` to activate websocket.io on *localhost:5000*
 
 ------
 
