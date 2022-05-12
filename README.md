@@ -76,6 +76,10 @@ In order to enter to our database from the terminal:
 
 ## Client
 
+To run client side navigate to the root part of the project
+
+* `cd api/client`
+
 * `npm start ` will activate client on *localhost:3000*
 
 * The frontend was constructed with [Create React App]
