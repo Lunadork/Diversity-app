@@ -13,11 +13,7 @@ export const Hazi = () => {
 
 
     const sendMessage = async (newMessage,username = 'anon',) =>
-    {
-
-        console.log("sending m")
-
-      
+    {    
 
         let response = await axios.post(conStr, 
                                     {
@@ -27,7 +23,6 @@ export const Hazi = () => {
                                     })
                                     
         const data = response.data
-        console.log(data)
 
         const userMessage = { "id" : messages.length+1, "message" : username + ": " +newMessage }
 
