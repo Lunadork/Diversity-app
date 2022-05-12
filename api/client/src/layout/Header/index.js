@@ -8,7 +8,6 @@ export const Header = () => {
         <nav>
 
             <NavLink to='/dashboard'>Home</NavLink>
-            <NavLink to='/about'>General advice</NavLink>
             {/* <BackButton /> */}
         </nav>
     )

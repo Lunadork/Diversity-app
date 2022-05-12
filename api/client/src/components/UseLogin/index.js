@@ -136,15 +136,6 @@ export const Login = () => {
             }
         }
 
-
-
-
-
-
-
-
-
-
     // Semantic element used for clarity
     // aria-live used to announce message when focus is set immediately
 
@@ -156,7 +147,7 @@ export const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <Button path = '/' value ='Go Home'/>
+                        <Button path = '/dashboard' value ='Dashboard'/>
                     </p>
                 </section>
             ) : (
@@ -166,10 +157,10 @@ export const Login = () => {
 
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
 
-            <h1>Log In</h1>
 
             <form className = "form" onSubmit ={handleSubmit}>
 
+            <h1>Log In</h1>
 
                 <div className="form-inputs">
                         <label htmlFor="email" className="form-label" >
@@ -252,12 +243,10 @@ export const Login = () => {
 
 
                </div>
-
-                <button className="form-input-btn " data-testid="btn-to-login" type='submit'>Login</button>
-                </form>
-                <p>
+                {/* Temporarily redirecting to the dashboard - TBR Anchor */}
+                <button className="form-input-btn " data-testid="btn-to-login" type='submit'><a href="/dashboard">Login</a></button>
                     <span className="form-input-login">Need an account? Signup <a href="/signup">here</a></span>
-                </p>
+                </form>
                 </div>
         </section>
 

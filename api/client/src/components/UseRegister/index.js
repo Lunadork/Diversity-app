@@ -38,50 +38,51 @@ useEffect(() => {
     e.preventDefault();
     setErrors(validatingErrors(userInfo))
     setFormSubmitting(true);
-   try {
-            const userData = {
-                username: userInfo.name,
-                email: userInfo.email,
-                password: userInfo.password,
-                password2: userInfo.password2
-            }
-            const options = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(userData)
-            }
-            const response = await axios(URL, options)
-            const data = await response.json()
-            if (data.err){ throw Error(data.err) }
-           console.log(`This is my${data} for registration`)
-           return data;
-        } catch (err) {
+    // TBR
+  //  try {
+  //           const userData = {
+  //               username: userInfo.name,
+  //               email: userInfo.email,
+  //               password: userInfo.password,
+  //               password2: userInfo.password2
+  //           }
+  //           const options = {
+  //               method: 'POST',
+  //               headers: { 'Content-Type': 'application/json' },
+  //               body: JSON.stringify(userData)
+  //           }
+  //           const response = await axios(URL, options)
+  //           const data = await response.json()
+  //           if (data.err){ throw Error(data.err) }
+  //          console.log(`This is my${data} for registration`)
+  //          return data;
+  //       } catch (err) {
 
-          if (err.response){
+  //         if (err.response){
 
-          //do something r
-          console.log('response was bad , so response  did not work')
+  //         //do something r
+  //         console.log('response was bad , so response  did not work')
 
 
-          }else if(err.request){
+  //         }else if(err.request){
 
-          //do something else
-          console.log('request was bad , so request did not work')
+  //         //do something else
+  //         console.log('request was bad , so request did not work')
 
-          }else if(err.message){
+  //         }else if(err.message){
 
-          //do something other than the other two
-          console.log('This error will be fixed soon with my team')
+  //         //do something other than the other two
+  //         console.log('This error will be fixed soon with my team')
 
-          }
-            console.warn( err);
-            setUserInfo({
-                username: "",
-                email: "",
-                password: "",
-                passwordConfirmation: ""
-            })
-        }
+  //         }
+  //           console.warn( err);
+  //           setUserInfo({
+  //               username: "",
+  //               email: "",
+  //               password: "",
+  //               passwordConfirmation: ""
+  //           })
+  //       }
 
   }
 

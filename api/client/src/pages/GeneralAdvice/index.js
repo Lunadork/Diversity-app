@@ -16,7 +16,7 @@ import './style.css'
         <h3>Chose a Category</h3>
 
           <div className='category-section'>
-            <button className="category-btn " type='submit' onClick={()=> setGuide("General Advice")}>General Advice</button>
+            <button className="category-btn " type='submit' onClick={()=> setGuide("General Advice")}>General</button>
 
             <button className="category-btn " type='submit' onClick={()=> setGuide("Anxiety")}>Anxiety</button>
 
