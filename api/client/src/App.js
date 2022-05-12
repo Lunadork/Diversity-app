@@ -36,7 +36,8 @@ const App = () => {
     { path:'/dashboard', element:<Pages.Dashboard/>},
     {path:'/general-advice', element:<Pages.GeneralAdvice />},
     { path:'/chatroom-board',  element: <Pages.ChatRoomBoard/>},
-    { path:'/groups', element: <Pages.Meetups/>}
+    { path:'/groups', element: <Pages.Meetups/>},
+    { path:'/helped', element: <Pages.Helped/>},
   ])
     return routes;
 };

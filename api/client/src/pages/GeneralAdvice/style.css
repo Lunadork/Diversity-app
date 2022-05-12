@@ -29,3 +29,9 @@
       rgb(12, 99, 250) 100%);
   transition: all 1.4s ease-out;
 }
+
+
+.btnHelpSection{
+  display: flex;
+  justify-content: center;
+}
