@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< Updated upstream
-import dj_database_url
-=======
-import dj_database_url
->>>>>>> Stashed changes
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
