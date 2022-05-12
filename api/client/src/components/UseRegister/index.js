@@ -6,7 +6,7 @@ const baseUrl="https://fpmhapp.herokuapp.com/users/"
 //we import validatingErrors from Register and pass it as a parameter to UseRegister
 
  export const UseRegister = (callback, validatingErrors)  => {
-  const [values, setValues] = useState({
+  const [userInfo, setUserInfo] = useState({
     username: '',
     email: '',
     password: '',
