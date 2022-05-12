@@ -102,8 +102,8 @@ export const Login = () => {
             setSuccess(true);
             setEmail('');
             setpassword('');
-            
-            
+
+
             try {
                 const response = await axios.post(LOGIN_URL,
                     JSON.stringify({ email, password }),
@@ -121,7 +121,7 @@ export const Login = () => {
                 const roles = response?.data?.roles;
 
                 setAuth({ email, password, roles, accessToken });
-                
+
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg('No Server Response');
@@ -170,7 +170,7 @@ export const Login = () => {
 
             <form className = "form" onSubmit ={handleSubmit}>
 
-                
+
                 <div className="form-inputs">
                         <label htmlFor="email" className="form-label" >
                                  Email:
@@ -204,23 +204,23 @@ export const Login = () => {
                                     <FontAwesomeIcon icon={faInfoCircle} />
                                     Please enter a valid email.<br />
                                 </p> : null }
-                                
-                                
-                                
+
+
+
                 </div>
 
                 <div className="form-inputs">
                     <label htmlFor="password" className="form-label" >
                          Password:
                         {/* <FontAwesomeIcon icon={faCheck} className={validpassword ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faTimes} className={validpassword || !password ? "hide" : "invalid"} /> 
+                        <FontAwesomeIcon icon={faTimes} className={validpassword || !password ? "hide" : "invalid"} />
                             <span className= {validpassword ? "valid" : "hide"}>
-                                {validpassword ? <FontAwesomeIcon icon={faCheck} style = {validpassword ? {color:'green'} :{color:'transparent'} } /> : null} 
+                                {validpassword ? <FontAwesomeIcon icon={faCheck} style = {validpassword ? {color:'green'} :{color:'transparent'} } /> : null}
                             </span>
                             <span className={validpassword || !password ? "hide" : "invalid"}>
                                 {!validpassword  ?  <FontAwesomeIcon icon={faTimes} style = {validpassword || !password ? {color:'transparent'} : {color:'red'} }/> :null }
                             </span>        */}
-                        
+
 
                     </label>
                         <input
@@ -246,13 +246,13 @@ export const Login = () => {
 
                     <div/>
 
-                    
+
 
 
 
 
                </div>
-               
+
                 <button className="form-input-btn " data-testid="btn-to-login" type='submit'>Login</button>
                 </form>
                 <p>

@@ -17,7 +17,7 @@ import './style.css'
 
       </div>
             <div className="banner-btn">
-              <Button path="/signup" value= "Get started" className="btnSignup"/>
+              <Button path="/general-advice" value= "Get started" className="btnSignup"/>
               <Button path="/login" value= "Login" className="btnLogin"/>
             </div>
     </section>
