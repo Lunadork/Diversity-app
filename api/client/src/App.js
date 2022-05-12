@@ -35,7 +35,8 @@ const App = () => {
     { path:'/login', element: <Pages.LoginForm />},
     { path:'/dashboard', element:<Pages.Dashboard/>},
     { path:'/chatroom-board',  element: <Pages.ChatRoomBoard/>}, 
-    { path:'/groups', element: <Pages.Meetups/>}
+    { path:'/groups', element: <Pages.Meetups/>},
+    { path:'/hazi', element: <Pages.Hazi/>}
   ])
     return routes;
 };
