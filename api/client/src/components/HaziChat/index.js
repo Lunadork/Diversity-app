@@ -11,17 +11,13 @@ export const HaziChat = (data) => {
 
   return (
     
-    <section>
+    <section className='row'>
 
-      <section id="messagesSection" className='messagesSection'>
+      <section id="messagesSection" className='messagesSection col-12'>
 
       {sortedData.map((message) => (<HaziMessage key = {message.id} message = {message} /> ) )}
 
       </section>
-
-      
-
-
 
     </section>
 

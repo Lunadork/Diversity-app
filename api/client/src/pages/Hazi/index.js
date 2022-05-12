@@ -56,14 +56,18 @@ export const Hazi = () => {
 
 
   return (
-    <>
+    <section className='container'>
     
-    <p className = "disclaimer">"Hazibot is not an alternative for professional medical advice and is in early development.  If you are in immediate danger please call Samaritans on 116 123.</p>
-    <img src = {hazi} className="haziImg"></img>
-    {messages.length > 0 ? (<HaziChat data = {messages} />) : "No messages found"}
-    <HaziForm onSend={sendMessage} />
-    <input type="text" placeholder="Username(DEV PURPOSES)" onChange={(e) => setUsername(e.target.value)} />
-    </>
+        <p className = "disclaimer">"Hazibot is not an alternative for professional medical advice and is in early development.  If you are in immediate danger please call Samaritans on 116 123.</p>
+        <div className="hazi">
+            <img src = {hazi} className="haziImg"></img>
+        </div>
+        {messages.length > 0 ? (<HaziChat data = {messages} />) : "No messages found"}
+        <HaziForm onSend={sendMessage} />
+        <div className='row'>
+            <input type="text" className="col-5" placeholder="Username(DEV PURPOSES)" onChange={(e) => setUsername(e.target.value)} />
+        </div>
+    </section>
 
   )
 }

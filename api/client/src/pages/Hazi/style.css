@@ -1,16 +1,27 @@
 .messagesSection
 {
     border: 1px grey solid;
-    border-radius: 5px;
     overflow-y: scroll; 
-    height:400px;
-
+    height:40vh;
     display: flex;
     flex-direction: column-reverse;
 }
+
+
 
 .HaziMessage
 {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.hazi
+{
+    display: flex;
+    justify-content: center;
+}
+
+.haziImg
+{
+    height:40vh
 }

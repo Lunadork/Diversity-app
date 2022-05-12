@@ -19,8 +19,10 @@ export const HaziForm = ( {onSend} ) => {
   return (
    
     <form className='HaziForm' onSubmit={submitForm}>
-        <input id="inputbox" className='MessageInput' type = "text" placeholder='Type Message here' onChange={(e) => setMessageContent(e.target.value)} />
-        <input className='MessageSubmittbtn' type='submit' value='Send'/>
+        <div className='row'>
+            <input id="inputbox" className='MessageInput col-10' type = "text" placeholder='Type Message here' onChange={(e) => setMessageContent(e.target.value)} />
+            <input className='MessageSubmittbtn col-2' type='submit' value='Send'/>
+        </div>
     </form>
     
   )
