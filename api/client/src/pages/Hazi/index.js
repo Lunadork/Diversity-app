@@ -10,15 +10,17 @@ export const Hazi = () => {
 
     const [messages,setMessages] = useState([{ "id" : 1, "message" : "Say hi to begin!"}])
     const [context,setContext] = useState(["Start"])
+    const [username,setUsername] = useState('')
 
 
 
-    const sendMessage = async (newMessage,username = 'anon2',) =>
+    const sendMessage = async (newMessage,usename = username,) =>
     {    
+        
 
         let response = await axios.post(conStr, 
                                     {
-                                        "username" : username,
+                                        "username" : usename,
                                         "message" : newMessage.toLowerCase(),
                                         "context" : context
                                     })
@@ -43,6 +45,8 @@ export const Hazi = () => {
 
         setContext(data.context)
 
+        console.log(context)
+
         const chatBox = document.getElementById("messagesSection")
         chatBox.scrollTop = chatBox.scrollHeight;
 
@@ -58,6 +62,7 @@ export const Hazi = () => {
     <img src = {hazi} className="haziImg"></img>
     {messages.length > 0 ? (<HaziChat data = {messages} />) : "No messages found"}
     <HaziForm onSend={sendMessage} />
+    <input type="text" placeholder="Username(DEV PURPOSES)" onChange={(e) => setUsername(e.target.value)} />
     </>
 
   )
