@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import { Groups, AddGroupForm } from '../../components'
+import { Header } from '../../layout'
 import './style.css'
 
 
@@ -41,6 +42,9 @@ export const Meetups = () =>
 
   return (
     <div>
+      <Header />
+
+
       Groups
 
     <AddGroupForm onAdd = {addGroup} />
