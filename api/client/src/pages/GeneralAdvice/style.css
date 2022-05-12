@@ -1,6 +1,6 @@
 .container-general-advice{
-  width: 800px;
-  margin: 100px auto;
+  width: 1fr;
+  margin: 10px ;
   border: 1px solid grey;
   /* height: 100vh; */
   border-radius: 5px;
@@ -28,4 +28,10 @@
       rgb(39, 143, 255) 0%,
       rgb(12, 99, 250) 100%);
   transition: all 1.4s ease-out;
+}
+
+
+.btnHelpSection{
+  display: flex;
+  justify-content: center;
 }

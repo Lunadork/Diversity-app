@@ -65,7 +65,7 @@ li{
 .container-chat{
     text-align:center;
     border:1px solid grey;
-    width:800px;
-    margin:20px auto;
+    width:1fr;
+    margin:20px;
     border-radius: 5px;
 }

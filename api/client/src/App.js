@@ -34,8 +34,10 @@ const App = () => {
     {path:'/signup', element:<Pages.Signup /> },
     { path:'/login', element: <Pages.LoginForm />},
     { path:'/dashboard', element:<Pages.Dashboard/>},
-    { path:'/chatroom-board',  element: <Pages.ChatRoomBoard/>}, 
-    { path:'/groups', element: <Pages.Meetups/>}
+    {path:'/general-advice', element:<Pages.GeneralAdvice />},
+    { path:'/chatroom-board',  element: <Pages.ChatRoomBoard/>},
+    { path:'/groups', element: <Pages.Meetups/>},
+    { path:'/helped', element: <Pages.Helped/>},
   ])
     return routes;
 };
@@ -46,7 +48,7 @@ const AppWrapper = () => {
     <Router>
       <App />
     </Router>
-    
+
   );
 };
 export default AppWrapper;
