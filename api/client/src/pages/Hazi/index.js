@@ -22,7 +22,7 @@ export const Hazi = () => {
         let response = await axios.post(conStr, 
                                     {
                                         "username" : username,
-                                        "message" : newMessage,
+                                        "message" : newMessage.toLowerCase(),
                                         "context" : context
                                     })
                                     
@@ -46,6 +46,9 @@ export const Hazi = () => {
         setMessages(newarr)
 
         setContext(data.context)
+
+        const chatBox = document.getElementById("messagesSection")
+        chatBox.scrollTop = chatBox.scrollHeight;
 
     }
 

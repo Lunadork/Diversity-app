@@ -5,7 +5,7 @@ export const HaziChat = (data) => {
 
 
 
-  const sortedData = data.data.sort((a,b) => parseInt(a.id) - parseInt(b.id));
+  const sortedData = data.data.sort((a,b) => parseInt(b.id) - parseInt(a.id));
 
 
 
@@ -13,7 +13,7 @@ export const HaziChat = (data) => {
     
     <section>
 
-      <section className='messagesSection'>
+      <section id="messagesSection" className='messagesSection'>
 
       {sortedData.map((message) => (<HaziMessage key = {message.id} message = {message} /> ) )}
 
