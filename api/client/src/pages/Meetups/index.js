@@ -17,9 +17,6 @@ export const Meetups = () =>
 
   const addGroup = (name,description,address,position,when) =>
   {
-
-    // console.log(latitude + " " + longitude)
-
     const newid = groups.length +1
     const newgroup = { "id" : newid, "name": name, "description" : description, "address" : address, "position" : position, "when" : when }
 

@@ -34,6 +34,7 @@ const App = () => {
     {path:'/signup', element:<Pages.Signup /> },
     { path:'/login', element: <Pages.LoginForm />},
     { path:'/dashboard', element:<Pages.Dashboard/>},
+    { path:'/hazi', element: <Pages.Hazi/>},
     {path:'/general-advice', element:<Pages.GeneralAdvice />},
     { path:'/chatroom-board',  element: <Pages.ChatRoomBoard/>},
     { path:'/groups', element: <Pages.Meetups/>},
