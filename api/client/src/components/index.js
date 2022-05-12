@@ -11,3 +11,7 @@ export {ChatRoom} from './ChatRoom'
 export {Text} from './Text'
 export { default as AdviceData} from './AdviceData'
 // export { default as ValidateLogin } from './ValidateLogin';
+export { GoogMap } from './GoogleMap'
+export { Groups } from './Groups'
+export { Group } from './Group'
+export { AddGroupForm } from './AddGroupForm'

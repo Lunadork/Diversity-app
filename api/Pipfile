@@ -4,12 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-<<<<<<< HEAD
-=======
 asgiref = "==3.5.1"
 certifi = "==2021.10.8"
 distlib = "==0.3.4"
 dj-database-url = "==0.5.0"
+django-cors-headers = "==3.11.0"
 djangorestframework = "==3.13.1"
 filelock = "==3.6.0"
 gunicorn = "==20.1.0"
@@ -22,13 +21,16 @@ sqlparse = "==0.4.2"
 virtualenv = "==20.14.1"
 virtualenv-clone = "==0.5.7"
 Django = "==4.0.4"
->>>>>>> 4855b844fa07ba7b43f1271b2dfdf0c9bc95f5fd
+channels = "*"
+channels-redis = "*"
+redis = "*"
 
 [dev-packages]
 
 [requires]
-<<<<<<< HEAD
 python_version = "3.10"
-=======
-python_version = "3.9"
->>>>>>> 4855b844fa07ba7b43f1271b2dfdf0c9bc95f5fd
+
+[scripts]
+dev = "python manage.py runserver"
+
+python_version = "3.10"

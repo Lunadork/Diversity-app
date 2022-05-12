@@ -1,0 +1,15 @@
+.mapContainer{
+    display:flex;
+    height:50vh;
+}
+
+.mapControls
+{
+
+}
+
+.map
+{
+    width:80vw;
+    height:50vh;
+}
