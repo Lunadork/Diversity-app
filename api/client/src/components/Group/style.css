@@ -1,0 +1,22 @@
+.groupsection {
+  display: flex;
+  justify-content:space-evenly;
+  /* background-color: blue; */
+
+}
+
+.groupsection h4{
+  color: rgb(59, 59, 223);
+  cursor: pointer;
+
+}
+
+.groupSectionContainer{
+
+  width: 1fr;
+  margin: 20px auto;
+  border: 1px solid rgb(223, 222, 229);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}

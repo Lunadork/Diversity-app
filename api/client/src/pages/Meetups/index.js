@@ -1,10 +1,12 @@
 import { React, useState } from 'react'
 import { Groups, AddGroupForm } from '../../components'
+import { Header } from '../../layout'
+import './style.css'
 
 
 
-export const Meetups = () => 
-{                 
+export const Meetups = () =>
+{
 
   const [groups,setGroups] = useState([ { "id" : 1, "name" : "Depression support group", "address" : "Dev purposes no address", "position" : {lat: 51.49, lng: 0.125}, "when" : "Thursdays at 7pm", "description" : "A weekly depression support meetup"},
   { "id" : 2, "name": "Anxiety support group", "address" : "Dev purposes no address", "position" : {lat: 51.5072, lng: 0.1276}, "when" : "Every second Tuesday at 8pm", "description" : "Anxiety support group, for those who suffer.  Friends and relatives welcome"},
@@ -13,7 +15,7 @@ export const Meetups = () =>
   ])
 
 
-  const addGroup = (name,description,address,position,when) => 
+  const addGroup = (name,description,address,position,when) =>
   {
     const newid = groups.length +1
     const newgroup = { "id" : newid, "name": name, "description" : description, "address" : address, "position" : position, "when" : when }
@@ -31,17 +33,21 @@ export const Meetups = () =>
 
 
     setGroups(newarr)
+
   }
- 
+
 
   return (
-    <div>Groups
+    <div>
+      <Header />
+
+
+      Groups
 
     <AddGroupForm onAdd = {addGroup} />
-    
-    {groups.length > 0 ? (<Groups data = {groups} />) : 'No groups found' }     
+
+    {groups.length > 0 ? (<Groups data = {groups} />) : 'No groups found' }
 
     </div>
   )
 }
-
