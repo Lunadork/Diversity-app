@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import { HaziChat, HaziForm } from '../../components'
 import axios from 'axios'
 import './style.css'
+import hazi from '../../assets/hazi.svg'
 
 const conStr = "http://localhost:5000/bot"
 
@@ -12,7 +13,7 @@ export const Hazi = () => {
 
 
 
-    const sendMessage = async (newMessage,username = 'anon',) =>
+    const sendMessage = async (newMessage,username = 'anon2',) =>
     {    
 
         let response = await axios.post(conStr, 
@@ -52,8 +53,9 @@ export const Hazi = () => {
 
   return (
     <>
-    <p className = "disclaimer">"Hazibot is not an alternative for professional medical advice and is in early development.  If you are in immediate danger please call Samaritans on 116 123.</p>
     
+    <p className = "disclaimer">"Hazibot is not an alternative for professional medical advice and is in early development.  If you are in immediate danger please call Samaritans on 116 123.</p>
+    <img src = {hazi} className="haziImg"></img>
     {messages.length > 0 ? (<HaziChat data = {messages} />) : "No messages found"}
     <HaziForm onSend={sendMessage} />
     </>
