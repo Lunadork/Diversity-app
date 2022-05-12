@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import axios from 'axios'
+import './style.css'
 
 export const AddGroupForm = ( {onAdd} ) =>
 {
@@ -43,11 +44,11 @@ export const AddGroupForm = ( {onAdd} ) =>
 
             const position = {lat: lati, lng: lngi}
 
-            
+
             const address = streetAddress+" - "+postcode.toUpperCase()
-        
+
             onAdd(name,description,address,position,when)
-            
+
         }
         catch(err)
         {
@@ -55,11 +56,11 @@ export const AddGroupForm = ( {onAdd} ) =>
             console.warn("Failed to get lat/long from response " +err)
         }
 
-        
+
     }
 
         //regex postcode checking
-        function validate_postcode(postcode) 
+        function validate_postcode(postcode)
         {
             postcode = postcode.replace(/\s/g, "");
             const regex = /^[A-Z]{1,2}[0-9]{1,2}[A-Z]{0,1} ?[0-9][A-Z]{2}$/i;
@@ -85,16 +86,16 @@ export const AddGroupForm = ( {onAdd} ) =>
 
     return (
 
-        <form onSubmit={submitForm}>
+        <form  className='groupForm'  onSubmit={submitForm}>
 
-            <input className='groupNameInput' type = 'text' placeholder='Group/Meetup name' onChange={(e) => setName(e.target.value)}/>
-            <input className='groupDescriptionInput' type = 'text' placeholder='Description' onChange={(e) => setDescription(e.target.value)}/>
-            <input className='groupStreetAddressInput' type = 'text' placeholder='Street Address' onChange={(e) => setStreetAddress(e.target.value)}/>
-            <input className='postcodeInput' type = 'text' placeholder='Postcode' onChange={(e) => setPostcode(e.target.value)}/>
-            <input className='whenInput' type = 'text' placeholder='When is your event?' onChange={(e) => setWhen(e.target.value)}/>
+            <input className='groupInput' type = 'text' placeholder='Group/Meetup name' onChange={(e) => setName(e.target.value)}/>
+            <input className='groupInput' type = 'text' placeholder='Description' onChange={(e) => setDescription(e.target.value)}/>
+            <input className='groupInput' type = 'text' placeholder='Street Address' onChange={(e) => setStreetAddress(e.target.value)}/>
+            <input className='groupInput' type = 'text' placeholder='Postcode' onChange={(e) => setPostcode(e.target.value)}/>
+            <input className='groupInput' type = 'text' placeholder='When is your event?' onChange={(e) => setWhen(e.target.value)}/>
             <input className='groupSubmitbtn' type='submit' value='Add your group' />
         </form>
 
     )
 
-} 
+}

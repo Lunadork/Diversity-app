@@ -23,12 +23,12 @@ import { Button } from '../Button/index';
 
 
 
-const LOGIN_URL = 'https://fpmhapp.herokuapp.com/users/'
+const LOGIN_URL = '/users'
 
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/i;
 
-export const validateLoginEmail = (str = " ") => str.includes(EMAIL_REGEX);
+// export const validateLoginEmail = (str = " ") => str.includes(EMAIL_REGEX);
 
 
 
@@ -48,9 +48,9 @@ export const Login = () => {
     const [validEmail, setValidEmail] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
-    const [pwd, setPwd] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
+    const [password, setpassword] = useState('');
+    const [validpassword, setValidpassword] = useState(false);
+    const [passwordFocus, setpasswordFocus] = useState(false);
 
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
@@ -75,8 +75,8 @@ export const Login = () => {
 
 
     useEffect(() => {
-        setValidPwd(PWD_REGEX.test(pwd))
-    }, [pwd])
+        setValidpassword(PWD_REGEX.test(password))
+    }, [password])
 
     // useEffect (()=>{
     //     const result = PWD_REGEX.test(pwd);
@@ -92,32 +92,36 @@ export const Login = () => {
     // Empty out any error message if user changes username or password
     useEffect(() => {
         setErrMsg('');
-    }, [email, pwd])
+    }, [email, password])
 
 
 
     const handleSubmit = async (e) => {
             e.preventDefault();
+            console.log(email, password);
             setSuccess(true);
+            setEmail('');
+            setpassword('');
+
+
             try {
                 const response = await axios.post(LOGIN_URL,
-                    JSON.stringify({ email, pwd }),
+                    JSON.stringify({ email, password }),
                     {
                         headers: { 'Content-Type': 'application/json' },
                         withCredentials: true
                     }
                 );
+                let responseJson = await response.json();
                 console.log(JSON.stringify(response?.data));
-                //console.log(JSON.stringify(response));
+                console.log(JSON.stringify(response));
 
                 //CHECKWITH BACKEND
                 const accessToken = response?.data?.accessToken;
                 const roles = response?.data?.roles;
 
-                setAuth({ email, pwd, roles, accessToken });
-                setEmail('');
-                setPwd('');
-                setSuccess(true);
+                setAuth({ email, password, roles, accessToken });
+
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg('No Server Response');
@@ -132,15 +136,6 @@ export const Login = () => {
             }
         }
 
-
-
-
-
-
-
-
-
-
     // Semantic element used for clarity
     // aria-live used to announce message when focus is set immediately
 
@@ -152,7 +147,7 @@ export const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <Button path = '/' value ='Go Home'/>
+                        <Button path = '/dashboard' value ='Dashboard'/>
                     </p>
                 </section>
             ) : (
@@ -162,9 +157,11 @@ export const Login = () => {
 
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
 
+
             <form className = "form" onSubmit ={handleSubmit}>
 
-                <h1>Log In</h1>
+            <h1>Log In</h1>
+
                 <div className="form-inputs">
                         <label htmlFor="email" className="form-label" >
                                  Email:
@@ -198,38 +195,39 @@ export const Login = () => {
                                     <FontAwesomeIcon icon={faInfoCircle} />
                                     Please enter a valid email.<br />
                                 </p> : null }
-                                
-                                
-                                
+
+
+
                 </div>
 
                 <div className="form-inputs">
                     <label htmlFor="password" className="form-label" >
                          Password:
-                         {/* <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                         <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} /> */}
-                         {/* <span className= {validPwd ? "valid" : "hide"}>
-                                {validPwd ? <FontAwesomeIcon icon={faCheck} style = {validPwd ? {color:'green'} :{color:'transparent'} } /> : null} */}
-                         {/* </span>
-                         <span className={validPwd || !pwd ? "hide" : "invalid"}>
-                                {!validPwd  ?  <FontAwesomeIcon icon={faTimes} style = {validPwd || !pwd ? {color:'transparent'} : {color:'red'} }/> :null } */}
-                        {/* </span> */}
+                        {/* <FontAwesomeIcon icon={faCheck} className={validpassword ? "valid" : "hide"} />
+                        <FontAwesomeIcon icon={faTimes} className={validpassword || !password ? "hide" : "invalid"} />
+                            <span className= {validpassword ? "valid" : "hide"}>
+                                {validpassword ? <FontAwesomeIcon icon={faCheck} style = {validpassword ? {color:'green'} :{color:'transparent'} } /> : null}
+                            </span>
+                            <span className={validpassword || !password ? "hide" : "invalid"}>
+                                {!validpassword  ?  <FontAwesomeIcon icon={faTimes} style = {validpassword || !password ? {color:'transparent'} : {color:'red'} }/> :null }
+                            </span>        */}
+
 
                     </label>
                         <input
                             className="form-input"
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            onChange={(e) => setpassword(e.target.value)}
+                            value={password}
                             required
-                            placeholder="Enter Password"
-                            aria-invalid={validPwd ? "false" : "true"}
-                            aria-describedby="pwdnote"
-                            onFocus={() => setPwdFocus(true)}
-                            onBlur={() => setPwdFocus(false)}
+                            placeholder="Enter password"
+                            aria-invalid={validpassword ? "false" : "true"}
+                            aria-describedby="passwordnote"
+                            onFocus={() => setpasswordFocus(true)}
+                            onBlur={() => setpasswordFocus(false)}
                         />
-                        {/* {userFocus && pwd && !validPwd ? <p id="pwdnote" className={pwdFocus && pwd && !validPwd ? "instructions" : "offscreen"}>
+                        {/* {userFocus && password && !validpassword ? <p id="pwdnote" className={passwordFocus && password && !validpassword ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
@@ -243,17 +241,13 @@ export const Login = () => {
 
 
 
-                </div>
-                <button className="form-input-btn " data-testid="btn-to-login" type='submit'>Login</button>
+
+               </div>
+                {/* Temporarily redirecting to the dashboard - TBR Anchor */}
+                <button className="form-input-btn " data-testid="btn-to-login" type='submit'><a href="/dashboard">Login</a></button>
                     <span className="form-input-login">Need an account? Signup <a href="/signup">here</a></span>
-
-            </form>
-
-
-            </div>
-
-
-
+                </form>
+                </div>
         </section>
 
             )}

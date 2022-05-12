@@ -1,7 +1,12 @@
+.background {
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../../imgHome.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
 .container-dashboard{
     text-align: center;
-    
-    
   }
 
 .category-btn {

@@ -12,12 +12,12 @@ import './style.css'
         <div className="banner-text ">
 
             <h1>Mental health solutions</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            <p>Diversity is an online mental health app designed to aid those who suffer from mental conditions such as depression, loneliness or anxiety. We have an area for general advice, organising local meetups and even our very own chatbot known as "HAZI"!
             </p>
 
       </div>
             <div className="banner-btn">
-              <Button path="/signup" value= "Get started" className="btnSignup"/>
+              <Button path="/general-advice" value= "Get started" className="btnSignup"/>
               <Button path="/login" value= "Login" className="btnLogin"/>
             </div>
     </section>
